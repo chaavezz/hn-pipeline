@@ -1,23 +1,38 @@
-Título:
-HN Pipeline
+JSON Headlines Pipeline
 
-Descripción:
-Python pipeline that scrapes Hacker News headlines and generates a structured text report.
+Python tool that scrapes Hacker News headlines and generates a structured report.
 
-Features:
+Features
 
-* scrape headlines
-* process structured data
-* rank longest titles
-* generate TXT output
+* Scrapes headlines from Hacker News
+* Processes data in memory (no intermediate JSON needed)
+* Ranks longest titles
+* Generates TXT report
+* CLI arguments support
 
-Usage:
-python3 main.py
+Usage
 
-Tech:
+Run with default values:
+
+python main.py
+
+Run with custom options:
+
+python main.py –top 5
+python main.py –output myreport.txt
+python main.py –top 3 –output custom.txt
+
+Arguments
+
+–top
+Number of longest titles to include (default: 2)
+
+–output
+Name of the output file (default: report.txt)
+
+Tech
 
 * Python
 * requests
 * BeautifulSoup
-* file I/O
-* sorting with sorted() and key
+* argparse
