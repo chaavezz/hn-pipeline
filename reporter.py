@@ -1,3 +1,4 @@
+import json
 def generate_numbered_list(data):
     numbered_list = ""
     for i, item in enumerate(data, start=1):
@@ -17,7 +18,7 @@ def count_items(data):
     return total_items
 
 def write_report(output_file_path, numbered_list, top_titles_by_length, total_items):
-    with open(output_file_path, "w") as f:
+    with open(output_file_path, "w", encoding="utf-8") as f:
         f.write("TOTAL ITEMS\n\n")
         f.write("-------------\n")
         f.write(f"{total_items}\n\n")
@@ -29,3 +30,7 @@ def write_report(output_file_path, numbered_list, top_titles_by_length, total_it
         for item in top_titles_by_length:
             f.write(f"- {item['title']}\n")
         f.write("\n")
+
+def write_json(output_file_path_json, data):
+    with open (output_file_path_json, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4)
