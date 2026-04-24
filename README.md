@@ -36,3 +36,7 @@ Tech
 * requests
 * BeautifulSoup
 * argparse
+
+Installation
+
+* pip install -r requirements.txt
